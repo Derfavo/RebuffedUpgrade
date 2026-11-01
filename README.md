@@ -35,10 +35,12 @@ The tooltip addition accounts for rebuilds by Pawn and Auctionator. Auctionator 
 
 ## Versions and update notices
 
-Stable versions are published as GitHub Releases with tags such as `v1.2.3`. The first number changes for incompatible changes, the second for new features, and the third for fixes. See [Releases](https://github.com/Derfavo/RebuffedUpgrade/releases) for downloads and release notes.
+Stable versions are published as GitHub Releases using `major.minor.patch` tags. The first number changes for incompatible changes, the second for new features, and the third for fixes. See [Releases](https://github.com/Derfavo/RebuffedUpgrade/releases) for downloads and release notes.
 
-The addon displays a chat notice at login when the external checker has found a newer stable release. `/rebuffedupdates` lists installed versions and the time of the last successful check. WoW cannot query GitHub itself. Install the optional checker in [tools](tools/README.md) for automatic background checks on Windows. It never downloads or installs addon updates.
+Update detection runs entirely inside WoW, using the same approach as DBM: addon messages exchange installed versions with other users in your party, raid and guild. Checks start automatically at login and when group or guild membership changes. Messages are hidden addon traffic, not ordinary chat. Replies are delayed and throttled to avoid repeated traffic during raid invites.
 
-Checks run every five minutes, with successful GitHub results cached for fifteen minutes. Login notices use the result available when the client loads the addons. A result received while WoW is already running appears after a full game restart. Network failures keep the previous result and its original timestamp; an unavailable check does not mean the addon is up to date.
+A newer version must be reported by two different players before the addon warns you. Future release dates are rejected. Confirmed versions are saved, so the notice can also appear at later logins. Each addon warns at most once per newer version per session. `/rebuffedupdates` shows your installed versions and any confirmed updates.
 
-To update manually, download the latest release's source ZIP, close WoW, extract it and copy the `RebuffedUpgrade` folder into `Interface/AddOns/`, replacing the previous folder. Do not copy the outer repository folder. Your settings in WTF remain untouched. Keep the checker outside the addon folder so updates do not replace the running checker.
+This does not contact GitHub or check a central server. If nobody you meet has a newer copy, the addon cannot know that a new release exists. No Windows task, external checker or automatic installation is used. DBM itself is not required.
+
+To update, download the latest release's source ZIP, close WoW, extract it and copy the `RebuffedUpgrade` folder into `Interface/AddOns/`, replacing the previous folder. Do not copy the outer repository folder. Your settings in WTF remain untouched.

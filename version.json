@@ -1,7 +1,7 @@
 {
   "addon": "RebuffedUpgrade",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "interface": 30300,
   "repository": "https://github.com/Derfavo/RebuffedUpgrade",
-  "release": "https://github.com/Derfavo/RebuffedUpgrade/releases/tag/v1.0.2"
+  "release": "https://github.com/Derfavo/RebuffedUpgrade/releases/tag/v1.0.3"
 }
