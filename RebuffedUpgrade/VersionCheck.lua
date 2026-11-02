@@ -42,7 +42,14 @@ if not manager then
         end
     end
     local function available(channel)
-        if channel == "GUILD" then return IsInGuild() end
+        if channel == "GUILD" then
+            local member = IsInGuild and IsInGuild()
+            -- Some 3.3.5 compatibility APIs return 0 instead of false. Also wait
+            -- for the player's guild name so a stale login flag cannot send.
+            if member ~= true and member ~= 1 then return false end
+            local name = GetGuildInfo and GetGuildInfo("player")
+            return type(name) == "string" and name:find("%S") ~= nil
+        end
         if channel == "RAID" then return GetNumRaidMembers() > 0 end
         return channel == "PARTY" and GetNumRaidMembers() == 0 and GetNumPartyMembers() > 0
     end

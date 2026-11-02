@@ -3,9 +3,9 @@
 ## Notes: Item upgrade advice for your current talent specialization, using Pawn.
 ## Notes-deDE: Upgrade-Empfehlungen fuer deine aktuelle Skillung auf Basis von Pawn.
 ## Author: Custom
-## X-Release-Date: 20261101
+## X-Release-Date: 20261102
 ## SavedVariables: RebuffedUpgradeVersionDB
-## Version: 1.0.3
+## Version: 1.0.4
 ## OptionalDeps: Pawn, Auctionator, AuctionatorMiniFeatures
 ## SavedVariablesPerCharacter: RebuffedUpgradeDB
 
